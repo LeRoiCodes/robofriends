@@ -4,6 +4,7 @@ import SearchBox from './SearchBox'
 // import {robots} from './robots'
 import "./app.css"
 import Scroll from './Scroll'
+import ErrorBoundary from './ErrorBoundary'
 
 function App() {
     const [robotsArray, setRobots] = useState([])
@@ -33,7 +34,10 @@ function App() {
         <h1 className='f2'> RoboFriends</h1>
         <SearchBox onSearchChange={onSearchChange}/>
         <Scroll>
-          <CardList robots={filteredRobots} />
+          <ErrorBoundary>
+            <CardList robots={filteredRobots} />
+          </ErrorBoundary>
+          
         </Scroll>
         
     </div>
