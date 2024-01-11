@@ -6,14 +6,19 @@ import './index.css';
 import "tachyons"
 // import CardList from './CardList';
 import App from './App';
+import { Provider, connect } from 'react-redux';
+import { createStore } from 'redux';
+import { searchRobots } from './redux/reducer';
 
+
+const store = createStore(searchRobots)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-
-    <App />
-    
+    <Provider store={store}>
+      <App store={store}/>
+    </Provider>
   </React.StrictMode>
 );
 
