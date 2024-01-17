@@ -5,10 +5,17 @@ import SearchBox from './SearchBox'
 import "./app.css"
 import Scroll from './Scroll'
 import ErrorBoundary from './ErrorBoundary'
+import { setSearchField } from './redux/Actions'
+import { useDispatch, useSelector } from 'react-redux'
+
+
+
 
 function App() {
     const [robotsArray, setRobots] = useState([])
-    const [searchField,  setSearchField] = useState('')
+    const searchField = useSelector((state) => state.searchField)
+    const dispatch = useDispatch()
+    // const [searchField,  setSearchField] = useState('')
     useEffect(() => {
       fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => response.json()
@@ -20,7 +27,8 @@ function App() {
 
     const onSearchChange = (e) => {
         // console.log(e.target.value)
-        setSearchField(e.target.value)
+        // setSearchField(e.target.value)
+        dispatch(setSearchField(e.target.value))
     }
     const filteredRobots = robotsArray.filter(robotsArray => {
       return robotsArray.name.toLowerCase().includes(searchField.toLowerCase())
