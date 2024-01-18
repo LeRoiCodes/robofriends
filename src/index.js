@@ -7,13 +7,16 @@ import "tachyons"
 // import CardList from './CardList';
 import App from './App';
 import { Provider, connect } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { searchRobots } from './redux/reducer';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { searchRobots, } from './redux/reducer';
 import { createLogger } from 'redux-logger';
+import { thunk } from 'redux-thunk';
+
 
 
 const logger = createLogger()
-const store = createStore(searchRobots, applyMiddleware(logger))
+// const rootReducer = combineReducers({searchRobots, requestRobots})
+const store = createStore(searchRobots, applyMiddleware(thunk, logger))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
