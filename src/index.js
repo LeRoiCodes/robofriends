@@ -6,8 +6,8 @@ import './index.css';
 import "tachyons"
 // import CardList from './CardList';
 import App from './App';
-import { Provider, connect } from 'react-redux';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { Provider, } from 'react-redux';
+import { createStore, applyMiddleware, } from 'redux';
 import { searchRobots, } from './redux/reducer';
 import { createLogger } from 'redux-logger';
 import { thunk } from 'redux-thunk';

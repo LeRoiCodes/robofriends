@@ -5,7 +5,7 @@ import SearchBox from './SearchBox'
 import "./app.css"
 import Scroll from './Scroll'
 import ErrorBoundary from './ErrorBoundary'
-import { requestRobots, setSearchField } from './redux/Actions'
+import { setSearchField } from './redux/Actions'
 import { useDispatch, useSelector } from 'react-redux'
 
 
