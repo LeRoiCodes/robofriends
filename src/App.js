@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import CardList from './CardList'
 import SearchBox from './SearchBox'
 // import {robots} from './robots'
-import "./App.css"
+import "./app.css"
 import Scroll from './Scroll'
 import ErrorBoundary from './ErrorBoundary'
 import { setSearchField } from './redux/Actions'
